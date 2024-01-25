@@ -11,11 +11,18 @@
    >This will run the file and sweep all the active ip's in the given range in the script.
    >>i.e. `./ip_sweeper.sh 192.186.1`
 
+<p align='center'>Some fundamentals required to write and understand this script.</p>
+ 
+- `grep` command.
+   >It is used to search given file for patterns specified by the user. Basically `grep` lets you enter a pattern of text and it searches for this pattern within the text that you provide it.
+- `tr` command.
+  >This command is used for translating or deleting characters.
+
 <p align='center'>The script</p>
 
 ```sh
 #!/bin/bash
 for ip in `seq 1 254 `; do
-ping -c 1 $1.$ip | grep "64 bytes" | cut -d "" -f 4 |tr -d ":" &
+ping -c 1 $1.$ip | grep "64 bytes" | cut -d "" -f 4 | tr -d ":" &
 done
 ```
