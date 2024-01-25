@@ -9,4 +9,13 @@
 - Run the script with the folowing command.
    `./ip_sweeper.sh [First three ranges of your IP]`
    >This will run the file and sweep all the active ip's in the given range in the script.
+   >>i.e. `./ip_sweeper.sh 192.186.1`
 
+<p align='center'>The script</p>
+
+```sh
+#!/bin/bash
+for ip in `seq 1 254 `; do
+ping -c 1 $1.$ip | grep "64 bytes" | cut -d "" -f 4 |tr -d ":" &
+done
+```
