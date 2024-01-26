@@ -1,7 +1,7 @@
 <p align="center">The IP Sweeper Script</p>
 <h1 align="center"><i>A welled detailed explanation of the IP(Internet Address) sweeper script written in Bash for Linux.</i></h1>
 
-- This [script](/ip_sweeper.sh 'ip_sweeper.sh file') designed to scan a range of IP addresses, typically within a specified subnet, to determine which IPs are active and responsive on a network. The primary purpose is to discover live hosts and filter out those that are reachable. The script uses the Internet Control Message Protocol (ICMP), often associated with the `ping` command, to send a simple network message (ping) to each IP address in the given range.
+- This [script](/ip_sweeper.sh 'ip_sweeper.sh file') is designed to scan a range of IP addresses, typically within a specified subnet, to determine which IPs are active and responsive on a network. The primary purpose is to discover live hosts and filter out those that are reachable. The script uses the Internet Control Message Protocol (ICMP), often associated with the `ping` command, to send a simple network message (ping) to each IP address in the given range.
 
 ### To get started
 - Clone the [Repository](https://github.com/CYBWithFlourish/IP-Sweeper-Script.git  'Projects Repo') i.e. `git clone https://github.com/CYBWithFlourish/IP-Sweeper-Script.git` or download the [`ip_sweeper.sh`](/ip_sweeper.sh 'ip_sweeper.sh file') script.
