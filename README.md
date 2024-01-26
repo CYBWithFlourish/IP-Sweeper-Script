@@ -50,3 +50,36 @@ for ip in $(seq 1 254); do
     ping -c 1 "$1.$ip" | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
   done
 ```
+<p align='center'>The script explained and breaked down.</p>
+
+> Now let's break down and try to under stand the code.
+
+- `#!/bin/bash` - It's basically a comment telling the computer, "Hey!, am a bash script".
+- ```sh
+  for ip in `seq 1 254 `; do 
+  ```       
+  > This is `for` loop. We want to execute the command for every ip in the given range.
+  > You can modified the loop to use `$(seq 1 254)` to generate the sequence of IP addresses.
+  > Thus, we write a `for` loop and execute it in a range for `1 ` tp `245` that is, the number of ip addresses in a particular network.
+  >>Note that you might want to adjust the range based on your network setup(range on the actual IP addresses you want to ping in your network). If you're working with standard IPv4 addresses, the range is typically from `1` to `255`.
+- ```sh
+  ping -c 1 "$1.$ip" | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
+  ```
+  > `ping`: To ping the ip addreess
+
+  > `-c 1`: Ping one ip at a time
+
+  > `$1.$ip`: `$1` will be the user input. We will input the first three ranges of the ip and the last range will be taken from the `for` loop. i.e. if a user input was `192.68.1` then in the first run of the `for` loop`$ip` will be `1`. thus, `$1.$ip` will result in `192.68.1.1` and it will ping this ip.
+
+  > `grep "64 bytes"`: Try running a `ping` command to an ip. If the ip responds, the resultwill be `"64 bytes from (given_ip)"`. Now, if the ip is active, it will respond and the response will contain the term `"64 bytes"`. Thus, `grep "64 bytes"` will simply filter out the ip's that responded from a total of `254` ip addresses. We know that if the ip is active it will respond. the demo of responding will be something like this, `'64 bytes from given_ip'` where given_ip will be the ip pinged too. Therefore from the whole response now, we will need only the ip address of the responded ip.
+
+  > `cut -d " " -f 4`: This command basically does the same thing. It cuts the whole response with the delimeter(`-d`), whitespace(`" "`), and picks the 4th term(`-f 4`) from it, that will be the ip. This `cut` command will basically produce output like `192.68.1.1` 
+  >>Here, we don't need the colon(`:`). We just need the ip, thus we run the `tr` command.
+
+  > `tr -d ":"`: Here we pass colon(`:`) as a delimeter and `tr` command deletes it.
+
+  > `&`: This basically allows the thread to work simultaneously.
+
+  > `|` (pipe): It basically joins all the above commands as a single command.
+  >> Dont't be confuse here, we used `{}` to group the commands inside the subshell to ensure the spinner runs until all the ping commands finish.
+
