@@ -81,5 +81,5 @@ for ip in $(seq 1 254); do
   > `&`: This basically allows the thread to work simultaneously.
 
   > `|` (pipe): It basically joins all the above commands as a single command.
-  >> Dont't be confuse here, we used `{}` to group the commands inside the subshell to ensure the spinner runs until all the ping commands finish.
+  >> Dont't be confuse here, we used `{}` in the [script](/ip_sweeper.sh) to group the commands inside the subshell to ensure the spinner runs until all the ping commands finish.
 
