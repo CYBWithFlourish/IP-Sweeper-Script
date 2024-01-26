@@ -39,8 +39,7 @@ do
 done
 ```
 <h3 align='center'>Output:</h3>
-> It will print numbers from 0to 9
-
+> It will print numbers from 0 to 9
 
 
 <p align='center'>The script</p>
