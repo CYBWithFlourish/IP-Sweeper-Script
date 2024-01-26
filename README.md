@@ -7,7 +7,7 @@
 - Clone the [Repository](https://github.com/CYBWithFlourish/IP-Sweeper-Script.git  'Projects Repo') i.e. `git clone https://github.com/CYBWithFlourish/IP-Sweeper-Script.git` or download the [`ip_sweeper.sh`](/ip_sweeper.sh 'ip_sweeper.sh file') script.
 - Navigate to the project directory using the `cd` command i.e. `cd IP-Sweeper-Script` or to where you downloaded the script file.
   ><i>Some of the conditions to be met before running this script include:</i>
-  >>- Ensure Bash is installed on your system. If your usind Linux or macOS, Bash is available by default. On Windows, you van use Git Bash or other tools (i.e. [Cygwin](), [Bash Shell for Windows]()).
+  >>- Ensure Bash is installed on your system. If your usind Linux or macOS, Bash is available by default. On Windows, you van use Git Bash or other tools (i.e. [Cygwin](https://www.cygwin.com/install.html), [Bash Shell for Windows](https://www.lifewire.com/install-bash-on-windows-10-4101773)).
   >>- The script heavily relies on the `ping` command which also comes pre-installed on most systems. You can verify its availability by running `ping` in your terminal.
   >>- For Unix-like Operating systems, Linux and macOS, make the script executable by running `chmod +x ip_sweeper.sh`.
   >>- Lastly, if your network uses a different IP range, adjust the range in the script accordingly. The script is currently set to iterate from 1 to 254, update the `seq` cammand in the script.
@@ -52,7 +52,7 @@ for ip in $(seq 1 254); do
 ```
 <p align='center'>The script explained and breaked down.</p>
 
-> Now let's break down and try to under stand the code.
+> Now let's break down and try to understand the code.
 
 - `#!/bin/bash` - It's basically a comment telling the computer, "Hey!, am a bash script".
 - ```sh
