@@ -32,15 +32,16 @@
 - `if-else` command.
   >This commands is a very important part of programming/scripting which allows us to make some decisions based on some conditions.
 - `for` Loops  - The `for` loop is a control flow statement in programming that allows code to be repeatedly executed. It is commonly used to iterate over lists or sequences of items, executing a specific set of instructions for each item in the list. i.e 
-  ```sh
+```sh
   for var in 0 1 2 3 4 5 6 7 8 9
 do
   echo $var
 done
-  ```
+```
+<h3 align='center'>Output:</h3>
+> It will print numbers from 0to 9
 
-    <h3 align='center'>output:</h3>
-> It will print numbers from 0 to 9         
+
 
 <p align='center'>The script</p>
 
