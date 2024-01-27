@@ -7,7 +7,7 @@
 - Clone the [Repository](https://github.com/CYBWithFlourish/IP-Sweeper-Script.git  'Projects Repo') i.e. `git clone https://github.com/CYBWithFlourish/IP-Sweeper-Script.git` or download the [`ip_sweeper.sh`](/ip_sweeper.sh 'ip_sweeper.sh file') script.
 - Navigate to the project directory using the `cd` command i.e. `cd IP-Sweeper-Script` or to where you downloaded the script file.
   ><i>Some of the conditions to be met before running this script include:</i>
-  >>- Ensure Bash is installed on your system. If your usind Linux or macOS, Bash is available by default. On Windows, you van use Git Bash or other tools (i.e. [Cygwin](https://www.cygwin.com/install.html), [Bash Shell for Windows](https://www.lifewire.com/install-bash-on-windows-10-4101773)).
+  >>- Ensure Bash is installed on your system. If your usind Linux or macOS, Bash is available by default. On Windows, you can use Git Bash or other tools (i.e. [Cygwin](https://www.cygwin.com/install.html), [Bash Shell for Windows](https://www.lifewire.com/install-bash-on-windows-10-4101773)).
   >>- The script heavily relies on the `ping` command which also comes pre-installed on most systems. You can verify its availability by running `ping` in your terminal.
   >>- For Unix-like Operating systems, Linux and macOS, make the script executable by running `chmod +x ip_sweeper.sh`.
   >>- Lastly, if your network uses a different IP range, adjust the range in the script accordingly. The script is currently set to iterate from 1 to 254, update the `seq` cammand in the script.
@@ -24,7 +24,7 @@
 - `tr` command.
   >This command is used for translating or deleting characters.
 - `cat` command.
-  >The cat command allows us to create single or multiple files, the view containing the file, concatenate(add) files, and redirect output in terminal or files.
+  >The cat command allows us to create single or multiple files,the view containing the file, concatenate(add) files, and redirect output in terminal or files.
 - `cut` command.
   >It is used to extract sections from each line of input -- usually from a file.
 - `echo` command.
@@ -65,13 +65,13 @@ for ip in $(seq 1 254); do
 - ```sh
   ping -c 1 "$1.$ip" | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
   ```
-  > `ping`: To ping the ip addreess
+  > `ping`: To ping the ip address 
 
   > `-c 1`: Ping one ip at a time
 
   > `$1.$ip`: `$1` will be the user input. We will input the first three ranges of the ip and the last range will be taken from the `for` loop. i.e. if a user input was `192.68.1` then in the first run of the `for` loop`$ip` will be `1`. thus, `$1.$ip` will result in `192.68.1.1` and it will ping this ip.
 
-  > `grep "64 bytes"`: Try running a `ping` command to an ip. If the ip responds, the resultwill be `"64 bytes from (given_ip)"`. Now, if the ip is active, it will respond and the response will contain the term `"64 bytes"`. Thus, `grep "64 bytes"` will simply filter out the ip's that responded from a total of `254` ip addresses. We know that if the ip is active it will respond. the demo of responding will be something like this, `'64 bytes from given_ip'` where given_ip will be the ip pinged too. Therefore from the whole response now, we will need only the ip address of the responded ip.
+  > `grep "64 bytes"`: Try running a `ping` command to an ip. If the ip responds, the result will be `"64 bytes from (given_ip)"`. Now, if the ip is active, it will respond and the response will contain the term `"64 bytes"`. Thus, `grep "64 bytes"` will simply filter out the ip's that responded from a total of `254` ip addresses. We know that if the ip is active it will respond. the demo of responding will be something like this, `'64 bytes from given_ip'` where given_ip will be the ip pinged too. Therefore from the whole response now, we will need only the ip address of the responded ip.
 
   > `cut -d " " -f 4`: This command basically does the same thing. It cuts the whole response with the delimeter(`-d`), whitespace(`" "`), and picks the 4th term(`-f 4`) from it, that will be the ip. This `cut` command will basically produce output like `192.68.1.1` 
   >>Here, we don't need the colon(`:`). We just need the ip, thus we run the `tr` command.
