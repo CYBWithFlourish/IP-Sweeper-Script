@@ -84,7 +84,7 @@ for ip in $(seq 1 254); do
   >> Dont't be confuse here, we used `{}` in the [script](/ip_sweeper.sh) to group the commands inside the subshell to ensure the spinner runs until all the ping commands finish.
 
 ### what else can this script be used for??
->If you're curious about the practical applications of this script, no need to wonder—I've provided a detailed explanation below
+>If you're curious about the practical applications of this script, no need to worry—I've provided a detailed explanation below
 
 The results obtained from the IP Sweeper script, which provides a list of live hosts in a specified IP address range, can be used for various purposes in networking and cybersecurity. Here are some common applications:
 - Network Discovery: 
