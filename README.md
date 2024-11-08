@@ -1,6 +1,6 @@
 <p align="center">
 <a   href="https://opensourcesecurityindex.io/" target="_blank" rel="noopener">
-<img style="width: 290px; height="59px" src="https://opensourcesecurityindex.io/badge.svg" alt="Open Source Security Index - Fastest Growing Open Source Security Projects" width="282" height="56" />
+<img style="width: 285px; height="59px" src="https://opensourcesecurityindex.io/badge.svg" alt="Open Source Security Index - Fastest Growing Open Source Security Projects" width="282" height="60" />
 </a>
 </p>
 
