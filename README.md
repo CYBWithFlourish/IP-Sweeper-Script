@@ -1,3 +1,10 @@
+<p align="center">
+<a   href="https://opensourcesecurityindex.io/" target="_blank" rel="noopener">
+<img style="width: 285px; height="59px" src="https://opensourcesecurityindex.io/badge.svg" alt="Open Source Security Index - Fastest Growing Open Source Security Projects" width="282" height="56" />
+</a>
+</p>
+
+
 <p align="center">The IP Sweeper Script</p>
 <h1 align="center"><i>A welled detailed explanation of the IP(Internet Address) sweeper script written in Bash.</i></h1>
 
